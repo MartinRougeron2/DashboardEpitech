@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  frontend:
+    build: frontend/
+    ports:
+      - "8000:8000"
+    networks:
+      - api_bridge
+  backend:
+    build: backend/
+    ports:
+      - "8080:8080"
+    networks:
+      - api_bridge
+networks:
+  api_bridge:
+    driver: bridge
